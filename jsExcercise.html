@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jsExcercise</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		//Write a function that takes in two numbers as parameters, and then returns or logs the larger number.
+
+		const biggerNumber = (numOne, numTwo) => {
+			return Math.max(numOne, numTwo);
+		}
+
+		console.log(biggerNumber(1,2));
+
+		// //Space letters
+		// //Create a function that takes in a string parameter representing some words or a sentence, and returns or logs that string with spaces in between all the characters.
+
+		const spaceLetter = (string) => {
+			return string.split("").join(" ");
+		}
+
+		console.log(spaceLetter("pizzapizza"));
+
+		// //Find string in array
+		// //Create a function that takes in two parameters: a string and an array of strings. It should attempt to find the string inside of the array, and return whether the search was successful or not.
+
+		const findString = (text, sentence) => {
+			if (sentence.indexOf(text) > -1) {
+				return true;
+			}
+		}
+
+		console.log(findString("z", "pizzapizza"));
+
+		// Count a letter
+		// Write a function that that accepts two string arguments, a single letter, and a passage of text to search within. The function should count the number of occurrences of the specified letter within the larger string.
+
+		const countLetter = (singleLetter, fullSentence) => {
+			let sentenceArray = fullSentence.split("");
+			let count = 0;
+			sentenceArray.forEach( (currentValue) => {
+				if (singleLetter == currentValue) {
+					count++;
+				}
+			});
+			return count;
+		} 
+
+		console.log(countLetter("z", "pizzapizza"));
+
+		//Vowel Count
+		//Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels! Ignore the letter ‘Y’.
+
+		
+		let vowels = ["a", "e", "i", "o", "u"];
+
+		let counter = 0;
+
+		const countVowel = (sentenceToCheckString) => {
+
+			let sentenceToCheckArray = sentenceToCheckString.split("");
+
+			for (var i = 0; i < sentenceToCheckArray.length; i++) {
+				var sentenceToCheckLetter = sentenceToCheckArray[i];
+				if (vowels.indexOf(sentenceToCheckLetter.toLowerCase()) >= 0) {
+					counter++;
+				}
+			}
+			return counter;
+		}
+
+		console.log(countVowel("Do I have any vowels?"))
+
+		// Second Highest
+
+		// Create a function that takes in a list of numbers, and returns the second highest number from those numbers.
+
+
+	    const secondHighestNumber = (numberArray) => {
+	    	let max = numberArray[0];
+	    	let maxIndex = 0;
+	    	numberArray.forEach( (value, index) => {
+	    		if (value > max) {
+	    			max = value;
+	    			maxIndex = index;
+	    		}
+ 	    	});
+ 	    	
+ 	    	numberArray.splice(maxIndex, 1);
+ 	    	
+ 	    	max = numberArray[0];
+	    	numberArray.forEach( (value, index) => {
+	    		if (value > max) {
+	    			max = value;
+	    		}
+ 	    	});
+
+	    	return max;
+	    } 
+
+	    console.log(secondHighestNumber([123,123,42,122,31,41,5]));
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

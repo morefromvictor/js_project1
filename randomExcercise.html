@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RandomExcercise</title>
+</head>
+<body>
+	<script>
+
+		// coin faces
+		const coin = ["heads", "tails"];
+
+		// Write a flip() function that flips a coin and returns heads or tails based on a random number.
+		const flip = () => {	
+			let coinFace = Math.floor(Math.random() * (coin.length));
+			return coin[coinFace];
+		}
+
+		//Write a function flipMany() that calls flip() 100 times. Recording the results of heads and tails.
+
+		let coinObject = { };
+
+		for(let i = 0; i < 100; i++) {
+			let flipResult = flip();
+			if (coinObject[flipResult] == undefined) {
+				coinObject[flipResult] = 0;
+			}
+			coinObject[flipResult]++;
+		}
+
+		console.log(coinObject);
+
+		//If there are record highs or record lows for each flip group. For example, 30 heads or 70 tails, record them as the the current highs/lows.
+
+
+	</script>
+</body>
+</html>
